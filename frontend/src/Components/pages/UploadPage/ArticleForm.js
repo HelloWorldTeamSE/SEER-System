@@ -1,59 +1,39 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 
 class form extends Component {
- 
-    handleUpload(e) {
-        
-        const url = '/files';
-            axios.post(url, 
-                {
-                    author:document.getElementById("author-text-area").value,
-                    title:document.getElementById("title-text-area").value,
-                    publisher:document.getElementById("publisher-text-area").value,
-                    year:document.getElementById("year-text-area").value,
-                    month:document.getElementById("month-text-area").value,
-                    journal:document.getElementById("journal-text-area").value,
-                })
-            .then((response) => {
-                //handle response latter
-                console.log(response);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-        
-
-    }
     render() { 
+        const{fileInfo} = this.props;
+        console.log(fileInfo);
+
         return ( 
             <React.Fragment>
                 <form>
                     <div className="form-group">
-                    <label >Author</label>
-                    <textarea className="form-control" id="author-text-area" rows="3" defaultValue={this.props.author}></textarea>
+                        <label >Author</label>
+                        <textarea className="form-control"  rows="1"></textarea>
+
                     </div>
                     <div className="form-group">
                         <label>Title</label>
-                        <textarea className="form-control" id="title-text-area"  rows="1" defaultValue={this.props.title}></textarea>
+                        <textarea className="form-control" rows="1"></textarea>
+
                     </div>
                     <div className="form-group">
                         <label >Publisher</label>
-                        <textarea className="form-control" id="publisher-text-area"  rows="1" defaultValue={this.props.publisher}></textarea>
+                        <textarea className="form-control"  rows="1"></textarea>
                     </div>
                     <div className="form-group">
                         <label >Year</label>
-                        <textarea className="form-control" id="year-text-area"   rows="1" defaultValue={this.props.year}></textarea>
+                        <textarea className="form-control"  rows="1"></textarea>
                     </div>
                     <div className="form-group">
                         <label >Month</label>
-                        <textarea className="form-control" id="month-text-area"  rows="1" defaultValue={this.props.month}></textarea>
+                        <textarea className="form-control"  rows="1"></textarea>
                     </div>
                     <div className="form-group">
                         <label >Journal</label>
-                        <textarea className="form-control" id="journal-text-area"   rows="1" defaultValue={this.props.journal}></textarea>
+                        <textarea className="form-control"  rows="1"></textarea>
                     </div>
-                    <button onClick={(e) => this.handleUpload(e)}>submit</button>
                     </form>
             </React.Fragment>
          );
