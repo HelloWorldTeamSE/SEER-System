@@ -28,4 +28,4 @@ password: admin
 
 On a side note: There is a bug if you delete your account while you are logged in the website will break. Then you will have to clear your browsing cache.
 
-and the profile page is not implemented yet.
+and the profile page is not implemented yet..
